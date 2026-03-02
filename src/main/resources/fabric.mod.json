@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "golay",
+  "version": "${version}",
+  "name": "GoLay",
+  "description": "The simple mod that allows you to crawl on button or commands.\n\nCommands:\n/lay - makes you lay\n/unlay makes you stand up\n\nBindings:\nYou can find a \"Lay\" binding in Movement category",
+  "authors": ["MiraDiv"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/golay/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.miradiv.golay.client.GoLayClient"
+    ],
+    "main": [
+      "dev.miradiv.golay.GoLay"
+    ]
+  },
+  "mixins": [
+    "golay.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
