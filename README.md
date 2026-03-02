@@ -16,3 +16,5 @@ This mod is made by **MiraDiv** and is under the **MIT** license, so you're free
 ## Donations
 You can toss me a coin! That lets me know I'm not the only one who needs this mod, and it motivates me to port it to other Minecraft versions. <br><br>
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/L3L21FDZL2)
+
+![Mod example image](/images/firstimage.png)
