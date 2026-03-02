@@ -1,6 +1,10 @@
 package dev.miradiv.golay;
 
+import dev.miradiv.golay.network.LayPacket;
+
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -22,6 +26,8 @@ public class GoLay implements ModInitializer
     {
         LOGGER.info("GoLay mod by MiraDiv. Initializing...");
 
+        PayloadTypeRegistry.playS2C().register(LayPacket.ID, LayPacket.CODEC);
+
         //Command should be written in this thing
         CommandRegistrationCallback.EVENT.register((commandDispatcher,
                                                      commandRegistryAccess,
@@ -38,6 +44,7 @@ public class GoLay implements ModInitializer
                             if (!layingPlayers.getOrDefault(player.getUuid(), false))
                             {
                                 layingPlayers.put(player.getUuid(), true);
+                                ServerPlayNetworking.send(player, new LayPacket(true));
                             }
                             else
                             {
@@ -67,6 +74,7 @@ public class GoLay implements ModInitializer
                             if (layingPlayers.getOrDefault(player.getUuid(), false))
                             {
                                 layingPlayers.put(player.getUuid(), false);
+                                ServerPlayNetworking.send(player, new LayPacket(false));
                             }
                             else
                             {
