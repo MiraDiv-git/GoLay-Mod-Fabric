@@ -5,7 +5,11 @@
   "name": "GoLay",
   "description": "The simple mod that allows you to crawl on button or commands.\n\nCommands:\n/lay - makes you lay\n/unlay makes you stand up\n\nBindings:\nYou can find a \"Lay\" binding in Movement category",
   "authors": ["MiraDiv"],
-  "contact": {},
+  "contact": {
+    "homepage": "https://modrinth.com/mod/golay",
+    "sources": "https://github.com/MiraDiv-git/GoLay-Mod-Fabric",
+    "issues": "https://github.com/MiraDiv-git/GoLay-Mod-Fabric/issues"
+  },
   "license": "MIT",
   "icon": "assets/golay/icon.png",
   "environment": "*",
